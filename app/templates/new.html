@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{%import 'macros.html' as macro%}
+<!-- Content block -->
+{% block content %}
+
+
+    {{macro.displaySourcesClicked(news)}}
+
+        
+        <!-- create a link that calls the get_article  -->
+        <!-- pass the news source into the url -->
+    
+{% endblock %}

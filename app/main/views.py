@@ -36,3 +36,13 @@ def news(source):
     # title=f'{newsarticle.title}'
     print(newsarticle)
     return render_template ('news.html',news=newsarticle)
+@main.route('/search/<article_name>')
+def search(article_name): 
+    """
+    View FUnction to display the search results
+    """
+    search_newsarticle_list=article_name.split(" ")
+    search_newsarticle_format="+".join(search_newsarticle_list)
+    searched_newsarticles=search_newsarticle(search_newsarticle_format)
+    title=f'search results for {article_name}'
+    return render_template('search.html',articles=searched_newsarticles)

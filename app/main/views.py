@@ -46,3 +46,26 @@ def search(article_name):
     searched_newsarticles=search_newsarticle(search_newsarticle_format)
     title=f'search results for {article_name}'
     return render_template('search.html',articles=searched_newsarticles)
+
+@main.route('/categories/<category>')
+def categories(category):
+    '''
+    View root page function that returns the category page and its data
+    '''
+    general_news_sources=get_news('general')
+    technology_news_sources=get_news('technology')
+    business_news_sources=get_news('business')
+    sports_news_sources=get_news('sports')
+    entertainment_news_sources=get_news('entertainment')
+    health_news_sources=get_news('health')
+    science_news_sources=get_news('science')
+    # https://newsapi.org/v2/sources?apiKey=3a1f09f201904834870e3fdbb44430ee
+
+    title="General News"
+    category=request.args.get('general')
+    if category:
+        return redirect(url_for('.category',general=general_news_sources))
+    else:
+        return render_template('category.html',title=title,general=general_news_sources)
+
+ 

@@ -13,7 +13,7 @@
 <div class="container">
     <form action="">
         <input type="text" name="article_query" placeholder="Search for News Articles...." class="form-control">
-        <input type="submit" value="submit" class="btn btn-default">
+        <input type="submit" value="submit" class="btn btn-success">
     </form>
 </div>
 <hr>
@@ -23,15 +23,15 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
-            <h3 style="font-family: sans-serif; font-style: italic;"><u>Today on Top USA Headlines</u></h3>
+            <h1 class="hd"><span style=" color:navy ; font-size: 35px;">TODAY'S HEADLINES</h1></span>
     
         
             {{macro.displayheadlines(newsheadlines)}}
         </div>
       <div class="col-md-8">
-        <h3>NEWS SOURCES</h3><span style="font-style: italic;">{{general|count}} News Source Available</span>
+        <h3 style="color: navy; font-size: 35px;">NEWS SOURCES</h3><span style="font-style: italic; font-size: 20px;">{{general|count}} News Source Available</span>
         
-        <hr>
+        <hr style="color: navy;">
         
             {{macro.displayNewsSourceList(general)}}
         
@@ -41,9 +41,4 @@
     
     </div>
 </div>
-
-
-    
-       
-
 {%endblock%}

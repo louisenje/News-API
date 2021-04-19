@@ -16,7 +16,7 @@ def index():
     entertainment_news_sources=get_newssource('entertainment')
     health_news_sources=get_newssource('health')
     science_news_sources=get_newssource('science')
-    # https://newsapi.org/v2/sources?apiKey=3a1f09f201904834870e3fdbb44430ee
+    # https://newsapi.org/v2/sources?apiKey=1a7a89e9390e47fcb1f7fb977320f71a
     newsheadlines=get_new_headlines()
     title="Home-Welcome to NEWS sources Website"
     search_article=request.args.get('article_query')
@@ -59,8 +59,7 @@ def categories(category):
     entertainment_news_sources=get_news('entertainment')
     health_news_sources=get_news('health')
     science_news_sources=get_news('science')
-    # https://newsapi.org/v2/sources?apiKey=3a1f09f201904834870e3fdbb44430ee
-
+    # https://newsapi.org/v2/sources?apiKey=1a7a89e9390e47fcb1f7fb977320f71a
     title="General News"
     category=request.args.get('general')
     if category:

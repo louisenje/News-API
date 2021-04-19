@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{%import 'macros.html' as macro%}
+
+!-- Styles block -->
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+<!-- Content block -->
+{% block content %}
+<div class="container">
+    <form action="">
+        <input type="text" name="article_query" placeholder="Search for News Articles...." class="form-control">
+        <input type="submit" value="submit" class="btn btn-default">
+    </form>
+</div>
+<hr>
+
+<hr>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <h3 style="font-family: sans-serif; font-style: italic;"><u>Today on Top USA Headlines</u></h3>
+    
+        
+            {{macro.displayheadlines(newsheadlines)}}
+        </div>
+      <div class="col-md-8">
+        <h3>NEWS SOURCES</h3><span style="font-style: italic;">{{general|count}} News Source Available</span>
+        
+        <hr>
+        
+            {{macro.displayNewsSourceList(general)}}
+        
+      </div>
+        
+    
+    
+    </div>
+</div>
+
+
+    
+       
+
+{%endblock%}

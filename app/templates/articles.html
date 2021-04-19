@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+  <ul>
+      {{ macro.displaySourcesClicked(sources) }}
+  </ul>
+
+{% endblock %}

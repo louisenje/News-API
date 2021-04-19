@@ -26,3 +26,13 @@ def index():
         return render_template('index.html',title=title, general=general_news_sources,technology=technology_news_sources,business=business_news_sources,
         sports=sports_news_sources,entertainment=entertainment_news_sources,health=health_news_sources,science=science_news_sources,
         newsheadlines=newsheadlines)
+
+@main.route('/news/<source>')
+def news(source):
+    '''
+    View news article function that returns the news articles page and its data
+    '''
+    newsarticle=get_news_article(source)
+    # title=f'{newsarticle.title}'
+    print(newsarticle)
+    return render_template ('news.html',news=newsarticle)
